@@ -1,5 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Min, Max } from 'class-validator';
+
+import { Product } from '../products/product.entity';
 
 @Entity()
 export class User {
@@ -23,4 +25,7 @@ export class User {
 
   @Column({ type: 'boolean' })
   isActive: boolean;
+
+  // @OneToMany(() => Product, product => product.)
+  // products: Product[];
 }
