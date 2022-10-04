@@ -1,0 +1,11 @@
+version: '3'
+services:
+  db: 
+    image: mysql:8.0
+    container_name: db_mysql_c
+    ports:
+      - '3080:3306'
+    environment:
+      MYSQL_USER: miguel
+      MYSQL_DATABASE: test_typeorm
+      MYSQL_ROOT_PASSWORD: 0miguel15
