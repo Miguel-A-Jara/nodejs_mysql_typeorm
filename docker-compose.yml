@@ -10,5 +10,15 @@ services:
       MYSQL_ROOT_PASSWORD: 0miguel15
     volumes:
       - ./mysql:/var/lib/mysql
+  backend:
+    build: ./
+    container_name: nodeserver_c
+    ports:
+      - '5000:5000'
+    environment:
+      - DBHOST=${DBHOST}
+      - DBPORT=${DBPORT}
+    depends_on:
+      - db
 volumes:
   mysql:
