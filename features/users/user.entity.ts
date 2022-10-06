@@ -26,6 +26,6 @@ export class User {
   @Column({ type: 'boolean' })
   isActive: boolean;
 
-  // @OneToMany(() => Product, product => product.)
-  // products: Product[];
+  @OneToMany(() => Product, product => product.user, { cascade: true })
+  products: Product[];
 }

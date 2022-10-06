@@ -1,5 +1,7 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { Min, Max } from 'class-validator';
+
+import { User } from '../users/user.entity';
 
 @Entity()
 export class Product {
@@ -17,10 +19,14 @@ export class Product {
   description: string;
 
   @Column({ type: 'tinyint' })
-  @Min(1)
-  @Max(99)
+  @Min(10)
+  @Max(999)
   price: number;
 
   @Column({ type: 'boolean' })
   isAvailable: boolean;
+
+  @ManyToOne(() => User, (user) => user.products)
+  @JoinColumn()
+  user: User;
 }

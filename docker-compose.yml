@@ -6,6 +6,5 @@ services:
     ports:
       - '3080:3306'
     environment:
-      MYSQL_USER: miguel
       MYSQL_DATABASE: test_typeorm
       MYSQL_ROOT_PASSWORD: 0miguel15

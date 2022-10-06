@@ -1,15 +1,17 @@
 import { DataSource } from 'typeorm';
-import { User } from './features/users/user.entity';
+
+import { Product } from './features/products/product.entity';
+import { User }    from './features/users/user.entity';
 
 export const AppDataSource = new DataSource({
   type: 'mysql',
   host: 'localhost',
   port: 3080,
-  username: 'miguel',
+  username: 'root',
   password: '0miguel15',
   database: 'test_typeorm',
   synchronize: true,
-  entities: [User],
+  entities: [User, Product],
 });
 
 const dbConfig = async () => {
