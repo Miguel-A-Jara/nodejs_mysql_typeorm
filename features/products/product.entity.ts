@@ -26,7 +26,7 @@ export class Product {
   @Column({ type: 'boolean' })
   isAvailable: boolean;
 
-  @ManyToOne(() => User, (user) => user.products)
+  @ManyToOne(() => User, (user) => user.products, { onDelete: 'CASCADE' })
   @JoinColumn()
   user: User;
 }

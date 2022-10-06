@@ -8,3 +8,7 @@ services:
     environment:
       MYSQL_DATABASE: test_typeorm
       MYSQL_ROOT_PASSWORD: 0miguel15
+    volumes:
+      - ./mysql:/var/lib/mysql
+volumes:
+  mysql:
